@@ -10,6 +10,7 @@ public class StringUtility {
      * @return the reversed String
      */
     public static String reverse(String input) {
+        if(input == null) return null;
 
         char[] chars = input.toCharArray();
 
