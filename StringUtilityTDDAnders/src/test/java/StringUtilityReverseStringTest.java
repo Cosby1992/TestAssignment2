@@ -136,6 +136,13 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_onlySpaces_onlySpaces() {
+        String input = "          ";
 
+        String actual = StringUtility.reverse(input);
+        String expected =  "          ";
 
+        assertEquals(expected, actual);
+    }
 }
