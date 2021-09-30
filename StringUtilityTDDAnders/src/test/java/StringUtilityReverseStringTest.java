@@ -87,7 +87,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_SpecialCharacters_SpecialCharactersReversed() {
+    public void reverseString_specialCharacters_specialCharactersReversed() {
         String input = "!#¤%&/()=:;,.-<>*+@£$€{[]}|¨";
 
         String actual = StringUtility.reverse(input);
@@ -97,7 +97,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_NewLine_NewLine() {
+    public void reverseString_newLine_newLine() {
         String input = "\n";
 
         String actual = StringUtility.reverse(input);
@@ -107,7 +107,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_StringContainingNewLine_ReversedStringContainingNewLine() {
+    public void reverseString_stringContainingNewLine_reversedStringContainingNewLine() {
         String input = "anders\nanders";
 
         String actual = StringUtility.reverse(input);
