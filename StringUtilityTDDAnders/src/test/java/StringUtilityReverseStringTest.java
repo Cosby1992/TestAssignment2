@@ -154,4 +154,14 @@ public class StringUtilityReverseStringTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void reverseString_twiceReversedShouldBeSameAsInput_sameAsInput() {
+        String input = "ABCDEFGHIJKLMN123456789";
+        // reversing the input twice
+        String actual = StringUtility.reverse(StringUtility.reverse(input));
+        String expected = "ABCDEFGHIJKLMN123456789";
+
+        assertEquals(expected, actual);
+    }
 }
