@@ -36,5 +36,15 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_AlPhAbEt_tEbAhPlA() {
+        String input = "AlPhAbEt";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "tEbAhPlA";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
