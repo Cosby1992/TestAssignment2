@@ -17,13 +17,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StringUtilityReverseStringTest {
 
     @Test
-    public void reverseString_aBc_ShouldBe_cBa() {
-        String actual;
+    public void reverseString_aBc_cBa() {
         String input = "aBc";
 
-        actual = StringUtility.reverse(input);
-
+        String actual = StringUtility.reverse(input);
         String expected = "cBa";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void reverseString_aBBc_cBBa() {
+        String input = "aBBc";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "cBBa";
+
         assertEquals(expected, actual);
     }
 
