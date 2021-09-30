@@ -76,6 +76,15 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_2letters_Qr() {
+        String input = "rQ";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "Qr";
+
+        assertEquals(expected, actual);
+    }
 
 
 
