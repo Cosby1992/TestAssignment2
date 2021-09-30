@@ -46,5 +46,15 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_LSDLkncvsd807w0452_2540w708dsvcnkLDSL() {
+        String input = "AlPhAbEt";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "tEbAhPlA";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
