@@ -116,6 +116,16 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_tabulator_tabulator() {
+        String input = "\t";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "\t";
+
+        assertEquals(expected, actual);
+    }
+
 
 
 }
