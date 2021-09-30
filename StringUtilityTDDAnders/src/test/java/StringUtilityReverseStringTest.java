@@ -96,6 +96,16 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_NewLine_EmptyString() {
+        String input = "\n";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "";
+
+        assertEquals(expected, actual);
+    }
+
 
 
 }
