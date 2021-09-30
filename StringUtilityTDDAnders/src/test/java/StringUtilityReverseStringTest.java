@@ -164,4 +164,16 @@ public class StringUtilityReverseStringTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void reverseString_unicode_unicodeReversed() {
+        String input = "\uD83D\uDE00 \uD83D\uDE03 \uD83D\uDE04";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "\uD83D\uDE04 \uD83D\uDE03 \uD83D\uDE00";
+
+        assertEquals(expected, actual);
+    }
+
+
 }
