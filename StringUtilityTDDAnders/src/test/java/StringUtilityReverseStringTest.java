@@ -86,6 +86,16 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_SpecialCharacters_SpecialCharactersReversed() {
+        String input = "!#¤%&/()=:;,.-<>*+@£$€{[]}|¨";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "¨|}][{€$£@+*><-.,;:=)(/&%¤#!";
+
+        assertEquals(expected, actual);
+    }
+
 
 
 }
