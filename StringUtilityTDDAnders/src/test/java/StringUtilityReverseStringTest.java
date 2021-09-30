@@ -145,4 +145,13 @@ public class StringUtilityReverseStringTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void reverseString_null_null() {
+        String input = null;
+        String actual = StringUtility.reverse(input);
+        String expected = null;
+
+        assertEquals(expected, actual);
+    }
 }
