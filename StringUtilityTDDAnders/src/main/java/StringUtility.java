@@ -10,6 +10,22 @@ public class StringUtility {
      * @return the reversed String
      */
     public static String reverse(String input) {
-        return "cBa";
+
+        char[] chars = input.toCharArray();
+        int leftPointer = 0;
+        int rightPointer = chars.length-1;
+
+        while(leftPointer < rightPointer){
+
+            char temp = chars[leftPointer];
+            chars[leftPointer] = chars[rightPointer];
+            chars[rightPointer] = temp;
+
+            leftPointer++;
+            rightPointer--;
+
+        }
+
+        return new String(chars);
     }
 }
