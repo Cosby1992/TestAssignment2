@@ -45,5 +45,9 @@ number in 16-bit space.
 Source(s):
 <br>https://medium.com/swlh/some-of-the-most-famous-bugs-in-software-history-bb16a2ee3f8e
 <br>https://en.wikipedia.org/wiki/Ariane_5#Launch_pricing_and_market_competition
-<br>https://www.youtube.com/watch?v=gp_D8r-2hwk
+
+### See a video of the accident below
+
+[![Alt text](https://i3.ytimg.com/vi/gp_D8r-2hwk/hqdefault.jpg)](https://www.youtube.com/watch?v=gp_D8r-2hwk)
+
 
