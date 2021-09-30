@@ -66,5 +66,17 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_1letter_Q() {
+        String input = "Q";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "Q";
+
+        assertEquals(expected, actual);
+    }
+
+
+
 
 }
