@@ -97,11 +97,21 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_NewLine_EmptyString() {
+    public void reverseString_NewLine_NewLine() {
         String input = "\n";
 
         String actual = StringUtility.reverse(input);
-        String expected =  "";
+        String expected =  "\n";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void reverseString_StringContainingNewLine_ReversedStringContainingNewLine() {
+        String input = "anders\nanders";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "sredna\nsredna";
 
         assertEquals(expected, actual);
     }
