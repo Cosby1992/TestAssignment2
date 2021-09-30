@@ -48,10 +48,20 @@ public class StringUtilityReverseStringTest {
 
     @Test
     public void reverseString_LSDLkncvsd807w0452_2540w708dsvcnkLDSL() {
-        String input = "AlPhAbEt";
+        String input = "LSDLkncvsd807w0452";
 
         String actual = StringUtility.reverse(input);
-        String expected =  "tEbAhPlA";
+        String expected =  "2540w708dsvcnkLDSL";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void reverseString_emptyString_emptyString() {
+        String input = "";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "";
 
         assertEquals(expected, actual);
     }
