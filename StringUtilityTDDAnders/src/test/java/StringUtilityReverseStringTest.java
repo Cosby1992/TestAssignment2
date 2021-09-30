@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class StringUtilityReverseStringTest {
 
     @Test
-    public void reverseString_aBc_cBa() {
+    public void reverseString_threeMixedLetters_cBa() {
         String input = "aBc";
 
         String actual = StringUtility.reverse(input);
@@ -27,7 +27,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_aBBc_cBBa() {
+    public void reverseString_fourMixedLetters_cBBa() {
         String input = "aBBc";
 
         String actual = StringUtility.reverse(input);
@@ -37,7 +37,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_AlPhAbEt_tEbAhPlA() {
+    public void reverseString_eightMixedLetters_tEbAhPlA() {
         String input = "AlPhAbEt";
 
         String actual = StringUtility.reverse(input);
@@ -47,7 +47,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_LSDLkncvsd807w0452_2540w708dsvcnkLDSL() {
+    public void reverseString_mixedLettersAndNumbers_2540w708dsvcnkLDSL() {
         String input = "LSDLkncvsd807w0452";
 
         String actual = StringUtility.reverse(input);
@@ -67,7 +67,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_1letter_Q() {
+    public void reverseString_oneLetter_Q() {
         String input = "Q";
 
         String actual = StringUtility.reverse(input);
@@ -77,7 +77,7 @@ public class StringUtilityReverseStringTest {
     }
 
     @Test
-    public void reverseString_2letters_Qr() {
+    public void reverseString_twoLetters_Qr() {
         String input = "rQ";
 
         String actual = StringUtility.reverse(input);
