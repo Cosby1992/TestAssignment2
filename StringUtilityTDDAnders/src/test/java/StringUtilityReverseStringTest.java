@@ -126,6 +126,16 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_stringContainingTabulator_stringContainingTabulator() {
+        String input = "AB123BA\tAB123BA";
+
+        String actual = StringUtility.reverse(input);
+        String expected =  "AB321BA\tAB321BA";
+
+        assertEquals(expected, actual);
+    }
+
 
 
 }
