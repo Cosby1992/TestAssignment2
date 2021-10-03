@@ -17,6 +17,8 @@ public class StringUtilityCapitalizeTest {
     @Test
     public void capitalize_null_null() {
         String input = null;
+
+        @SuppressWarnings("ConstantConditions")
         String actual = StringUtility.capitalize(input);
         String expected = null;
 
@@ -28,6 +30,15 @@ public class StringUtilityCapitalizeTest {
         String input = "a";
         String actual = StringUtility.capitalize(input);
         String expected = "A";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void capitalize_aBc_ABC() {
+        String input = "aBc";
+        String actual = StringUtility.capitalize(input);
+        String expected = "ABC";
 
         assertEquals(expected, actual);
     }
