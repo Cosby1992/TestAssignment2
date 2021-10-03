@@ -6,6 +6,13 @@ import java.nio.charset.StandardCharsets;
 
 public class StringUtility {
 
+    private static final int ASCII_TRANSFORM_CONSTANT = 32;
+    private static final int ASCII_UPPERCASE_START_INDEX = 65;
+    private static final int ASCII_UPPERCASE_END_INDEX = 90;
+    private static final int ASCII_LOWERCASE_START_INDEX = 97;
+    private static final int ASCII_LOWERCASE_END_INDEX = 122;
+
+
     /**
      * reverses a String e.g. aBc -> cBa
      * @param input The String to reverse
@@ -51,16 +58,22 @@ public class StringUtility {
 
     }
 
+    /**
+     * capitalizes a String e.g aBc -> ABC
+     * @param input The String to capitalize
+     * @return the capitalized String
+     */
     public static String capitalize(String input) {
-
+        // Guard against null input
         if(input == null) return null;
 
         char[] inputCharArray = input.toCharArray();
 
+        // Going through each letter, if it is a lowercase letter,
+        // transform it to uppercase through ascii transformation. (see ascii-table for reference)
         for (int i = 0; i < inputCharArray.length; i++) {
-            System.out.println((byte) inputCharArray[i]);
-            if(inputCharArray[i] > 96 && inputCharArray[i] < 122) {
-                inputCharArray[i] -= 32;
+            if(inputCharArray[i] >= ASCII_LOWERCASE_START_INDEX && inputCharArray[i] < ASCII_LOWERCASE_END_INDEX) {
+                inputCharArray[i] -= ASCII_TRANSFORM_CONSTANT;
             }
         }
 
