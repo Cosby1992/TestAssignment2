@@ -43,4 +43,14 @@ public class StringUtilityCapitalizeTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void capitalize_mixedLettersAndNumbers_2540w708dsvcnkLDSL() {
+        String input = "LSDLkncvsd807w0452";
+
+        String actual = StringUtility.capitalize(input);
+        String expected =  "LSDLKNCVSD807W0452";
+
+        assertEquals(expected, actual);
+    }
+
 }
