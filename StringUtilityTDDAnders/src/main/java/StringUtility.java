@@ -55,7 +55,16 @@ public class StringUtility {
 
         if(input == null) return null;
 
-        return "A";
+        char[] inputCharArray = input.toCharArray();
+
+        for (int i = 0; i < inputCharArray.length; i++) {
+            System.out.println((byte) inputCharArray[i]);
+            if(inputCharArray[i] > 96 && inputCharArray[i] < 122) {
+                inputCharArray[i] -= 32;
+            }
+        }
+
+        return new String(inputCharArray);
     }
 
 }
