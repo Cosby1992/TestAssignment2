@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Anders
  */
-
 public class StringUtilityReverseStringTest {
 
     @Test
