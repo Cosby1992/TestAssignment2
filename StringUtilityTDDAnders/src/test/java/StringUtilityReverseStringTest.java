@@ -175,5 +175,15 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_unicodeAndCharacters_unicodeAndCharactersReversed() {
+        String input = "\uD83D\uDE00 ABC \uD83D\uDE03 ABC \uD83D\uDE04";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "\uD83D\uDE04 CBA \uD83D\uDE03 CBA \uD83D\uDE00";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
