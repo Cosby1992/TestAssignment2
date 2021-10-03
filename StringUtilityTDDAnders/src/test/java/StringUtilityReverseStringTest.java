@@ -195,5 +195,25 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_chineseCharacters_chineseCharactersReversed() {
+        String input = "四千年前有一个姑娘叫姜嫄，她有一天觉得很空虚，就到郊外玩，看见一只巨人脚印，也许是外星人留下的，她想上去比一比，看看谁的脚丫子更大，就踩上去。踩上去就发现肚子里乱动，跟怀了孕似的。回去以后，肚子里的小孩，又老不出来，过了十二个月才生下来。";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "。来下生才月个二十了过，来出不老又，孩小的里子肚，后以去回。的似孕了怀跟，动乱里子肚现发就去上踩。去上踩就，大更子丫脚的谁看看，比一比去上想她，的下留人星外是许也，印脚人巨只一见看，玩外郊到就，虚空很得觉天一有她，嫄姜叫娘姑个一有前年千四";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void reverseString_misplacedQuotationMarks_misplacedQuotationMarksReversed() {
+        String input = "<foo val=“bar” />";
+
+        String actual = StringUtility.reverse(input);
+        String expected = ">/ ”rab“=lav oof<";
+        assertEquals(expected, actual);
+    }
+
+
 
 }
