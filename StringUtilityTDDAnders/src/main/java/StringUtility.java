@@ -1,3 +1,5 @@
+import java.nio.charset.StandardCharsets;
+
 /**
  * This is a String utility class which can reverse a String.
  */
@@ -13,27 +15,61 @@ public class StringUtility {
         // Guard if input is null
         if(input == null) return null;
 
-        char[] chars = input.toCharArray();
+        // input and output arrays
+        char[] inputCharArray = input.toCharArray();
+        char[] reversedCharArray = new char[inputCharArray.length];
 
-        // pointers to keep track of left and right position in char array
-        int leftPointer = 0;
-        int rightPointer = chars.length-1;
+        // pointers to keep track of current char index and placement index in output array
+        int nextCharPointer = 0; // first char
+        int placementCharPointer = inputCharArray.length-1; // last index
 
-        while(leftPointer < rightPointer){
+        // Go through the input array and place each char in the output array
+        while(nextCharPointer < inputCharArray.length){
 
-            // flip left and right letter (starting from the outside)
-            char temp = chars[leftPointer];
-            chars[leftPointer] = chars[rightPointer];
-            chars[rightPointer] = temp;
+            // Find out how many char[] places a char takes up
+            // This is purely to support unicode characters like
+            // smileys and special characters (e.g. chinese letters)
+            int characterLength =  Character.charCount(Character.codePointAt(inputCharArray, nextCharPointer));
 
-            // move the pointers one place towards center of array
-            leftPointer++;
-            rightPointer--;
+            if(characterLength == 1) {
+                // if character is only taking up one space in the array
+                reversedCharArray[placementCharPointer--] = inputCharArray[nextCharPointer++];
+            } else {
+                // if character is taking up multiple spaces in the array
+                for (int i = 0, placementDelta = characterLength-1; i < characterLength; i++, placementDelta--) {
+                    reversedCharArray[placementCharPointer - placementDelta] = inputCharArray[nextCharPointer + i];
+                }
+                nextCharPointer += characterLength;
+                placementCharPointer -= (characterLength);
+            }
 
-            // keep going until the pointers meet (or overlap)
+            // keep going until the end of the input array
         }
 
         // return the reversed message
-        return new String(chars);
+        return new String(reversedCharArray);
+
+        //        Previous solution
+        //
+        //        char[] chars = input.toCharArray();
+        //
+        //        // pointers to keep track of left and right position in char array
+        //        int leftPointer = 0;
+        //        int rightPointer = chars.length-1;
+        //
+        //        while(leftPointer < rightPointer){
+        //
+        //            // flip left and right letter (starting from the outside)
+        //            char temp = chars[leftPointer];
+        //
+        //            chars[leftPointer] = chars[rightPointer];
+        //            chars[rightPointer] = temp;
+        //
+        //            // move the pointers one place towards center of array
+        //            leftPointer++;
+        //            rightPointer--;
+        //
+        //            // keep going until the pointers meet (or overlap)
     }
+
 }
