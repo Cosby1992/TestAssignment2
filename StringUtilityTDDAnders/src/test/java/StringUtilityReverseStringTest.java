@@ -259,5 +259,16 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_arabicHebrew_arabicHebrewReversed() {
+        String input = "ثم نفس سقطت وبالتحديد،, جزيرتي باستخدام أن دنو. إذ هنا؟ الستار وتنصيب كان. أهّل ايطاليا، بريطانيا-فرنسا قد أخذ. سليمان، إتفاقية بين ما, يذكر الحدود أي بعد, معاملة بولندا، الإطلاق عل إيو.\n" +
+                "בְּרֵאשִׁית, בָּרָא אֱלֹהִים, אֵת הַשָּׁמַיִם, וְאֵת הָאָרֶץ";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "ץֶרָאָה תֵאְו ,םִיַמָּׁשַה תֵא ,םיִהֹלֱא אָרָּב ,תיִׁשאֵרְּב\n" +
+                ".ويإ لع قالطإلا ،ادنلوب ةلماعم ,دعب يأ دودحلا ركذي ,ام نيب ةيقافتإ ،ناميلس .ذخأ دق اسنرف-ايناطيرب ،ايلاطيا لّهأ .ناك بيصنتو راتسلا ؟انه ذإ .وند نأ مادختساب يتريزج ,،ديدحتلابو تطقس سفن مث";
+
+        assertEquals(expected, actual);
+    }
 
 }
