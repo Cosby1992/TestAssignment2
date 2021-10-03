@@ -185,5 +185,15 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_200Characters_200CharactersReversed() {
+        String input = "EFckuateeaVA8GPC0EFYcUxkW9jDSTN3Hzf3D5RFI2aIWVmcGSsRA0k01JAeaA0AtfVA8v2ewZ2VJz2fVRhQLf0UPTsaDxEjD1Rc3zZvnKFyEVxMGP584lYI3JDSIv0n1s4WESf5r7CN4797AZesf9GBo9aKlknXxVUHxOCW9fUwcGcqQeZM2lv4KWpmR3VOGyU6iirz";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "zrii6UyGOV3RmpWK4vl2MZeQqcGcwUf9WCOxHUVxXnklKa9oBG9fseZA7974NC7r5fSEW4s1n0vISDJ3IYl485PGMxVEyFKnvZz3cR1DjExDasTPU0fLQhRVf2zJV2Zwe2v8AVftA0AaeAJ10k0ARsSGcmVWIa2IFR5D3fzH3NTSDj9WkxUcYFE0CPG8AVaeetaukcFE";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
