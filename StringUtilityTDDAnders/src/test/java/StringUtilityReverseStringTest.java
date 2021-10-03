@@ -11,6 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
  * Name: junit-jupiter
  * Version: 5.8.1
  *
+ * Some string test examples are taken from this list on GitHub:
+ * https://github.com/minimaxir/big-list-of-naughty-strings
+ * Props to this guy ↑↑↑
+ *
  * @author Anders
  */
 public class StringUtilityReverseStringTest {
