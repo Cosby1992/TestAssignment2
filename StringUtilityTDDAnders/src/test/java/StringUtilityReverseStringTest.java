@@ -225,5 +225,39 @@ public class StringUtilityReverseStringTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void reverseString_japaneseStyleEmojicons_japaneseStyleEmojiconsReversed() {
+        String input = """
+                ヽ༼ຈل͜ຈ༽ﾉ ヽ༼ຈل͜ຈ༽ﾉ
+                (｡◕ ∀ ◕｡)
+                ｀ｨ(´∀｀∩
+                __ﾛ(,_,*)
+                ・(￣∀￣)・:*:
+                ﾟ･✿ヾ╲(｡◕‿◕｡)╱✿･ﾟ
+                ,。・:*:・゜’( ☻ ω ☻ )。・:*:・゜’
+                (╯°□°）╯︵ ┻━┻)
+                (ﾉಥ益ಥ）ﾉ\uFEFF ┻━┻
+                ┬─┬ノ( º _ ºノ)
+                ( ͡° ͜ʖ ͡°)
+                ¯\\_(ツ)_/¯""";
+
+        String actual = StringUtility.reverse(input);
+        String expected = """
+                ¯/_)ツ(_\\¯
+                )°͡ ʖ͜ °͡ (
+                )ノº _ º (ノ┬─┬
+                ┻━┻ \uFEFFﾉ）ಥ益ಥﾉ(
+                )┻━┻ ︵╯）°□°╯(
+                ’゜・:*:・。) ☻ ω ☻ (’゜・:*:・。,
+                ﾟ･✿╱)｡◕‿◕｡(╲ヾ✿･ﾟ
+                :*:・)￣∀￣(・
+                )*,_,(ﾛ__
+                ∩｀∀´(ｨ｀
+                )｡◕ ∀ ◕｡(
+                ﾉ༽ຈ͜لຈ༼ヽ ﾉ༽ຈ͜لຈ༼ヽ""";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
