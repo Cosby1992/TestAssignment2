@@ -215,5 +215,15 @@ public class StringUtilityReverseStringTest {
     }
 
 
+    @Test
+    public void reverseString_misplacedQuotationMarks2_misplacedQuotationMarks2Reversed() {
+        String input = "\"'\"'\"''''\"";
+
+        String actual = StringUtility.reverse(input);
+        String expected = "\"''''\"'\"'\"";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
