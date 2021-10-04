@@ -15,6 +15,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StringUtilityLowercaseTest {
 
     @Test
+    public void lowercase_null_null() {
+        String input = null;
+        @SuppressWarnings("ConstantConditions")
+        String actual = StringUtility.lowercase(input);
+        String expected = null;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void lowercase_oneLetter_a() {
 
         String input = "A";
