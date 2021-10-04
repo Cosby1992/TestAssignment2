@@ -21,9 +21,21 @@ public class BowlingGameTest {
     @Test
     public void getScore_gameOfOnes_20() {
         BowlingGame game = new BowlingGame();
-        rollMany(game, 20, 0);
+        rollMany(game, 20, 1);
         int actual = game.getScore();
         int expected = 20;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getScore_oneSpare_16() {
+        BowlingGame game = new BowlingGame();
+        game.roll(5);
+        game.roll(5);
+        game.roll(3);
+        rollMany(game, 17, 0);
+        int actual = game.getScore();
+        int expected = 16;
         assertEquals(expected, actual);
     }
 
