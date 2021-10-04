@@ -87,6 +87,8 @@ public class StringUtility {
      */
     public static String lowercase(String input) {
 
+        if (input == null) return null;
+
         char[] inputCharArray = input.toCharArray();
 
         // Going through each letter, if it is an uppercase letter,
