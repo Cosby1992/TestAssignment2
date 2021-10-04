@@ -52,5 +52,14 @@ public class StringUtilityLowercaseTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void lowercase_startAndEndEdgeCases_abcxyz() {
+        String input = "ABCXYZ";
+        String actual = StringUtility.lowercase(input);
+        String expected = "abcxyz";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
