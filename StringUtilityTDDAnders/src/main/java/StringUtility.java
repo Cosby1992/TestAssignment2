@@ -87,7 +87,7 @@ public class StringUtility {
         // Going through each letter, if it is a lowercase letter,
         // transform it to uppercase through ascii transformation. (see ascii-table for reference)
         for (int i = 0; i < inputCharArray.length; i++) {
-            if(inputCharArray[i] >= ASCII_UPPERCASE_START_INDEX && inputCharArray[i] < ASCII_UPPERCASE_END_INDEX) {
+            if(inputCharArray[i] >= ASCII_UPPERCASE_START_INDEX && inputCharArray[i] <= ASCII_UPPERCASE_END_INDEX) {
                 inputCharArray[i] += ASCII_TRANSFORM_CONSTANT;
             }
         }
