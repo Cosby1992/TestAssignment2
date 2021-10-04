@@ -43,5 +43,14 @@ public class StringUtilityLowercaseTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void lowercase_lowercaseShouldStayLowercase_abchijxyz() {
+        String input = "abchijxyz";
+        String actual = StringUtility.lowercase(input);
+        String expected = "abchijxyz";
+
+        assertEquals(expected, actual);
+    }
+
 
 }
