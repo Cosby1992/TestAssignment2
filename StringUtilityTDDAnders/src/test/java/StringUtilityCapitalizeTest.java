@@ -53,4 +53,16 @@ public class StringUtilityCapitalizeTest {
         assertEquals(expected, actual);
     }
 
+    // I do not have time to implment special characters like æøå and modified letters like éúû etc...
+
+//    @Test
+//    public void capitalize_danishCharacters_ÆØÅ() {
+//        String input = "æØå";
+//
+//        String actual = StringUtility.capitalize(input);
+//        String expected =  "ÆØÅ";
+//
+//        assertEquals(expected, actual);
+//    }
+
 }
