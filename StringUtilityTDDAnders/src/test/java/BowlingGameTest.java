@@ -18,4 +18,19 @@ public class BowlingGameTest {
 
     }
 
+    @Test
+    public void getScore_gameOfOnes_20() {
+        BowlingGame game = new BowlingGame();
+
+        for (int i = 0; i < 20; i++) {
+            game.roll(1);
+        }
+
+        int actual = game.getScore();
+        int expected = 20;
+
+        assertEquals(expected, actual);
+
+    }
+
 }
