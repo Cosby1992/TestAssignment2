@@ -61,5 +61,7 @@ public class StringUtilityLowercaseTest {
         assertEquals(expected, actual);
     }
 
+    // I dont have time to handle unicode cases within this assignments deadline
+
 
 }

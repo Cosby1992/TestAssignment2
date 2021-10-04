@@ -80,12 +80,17 @@ public class StringUtility {
         return new String(inputCharArray);
     }
 
+    /**
+     * converts a String to lowercase e.g. AbC -> abc
+     * @param input the String to convert
+     * @return the String in lowercase
+     */
     public static String lowercase(String input) {
 
         char[] inputCharArray = input.toCharArray();
 
-        // Going through each letter, if it is a lowercase letter,
-        // transform it to uppercase through ascii transformation. (see ascii-table for reference)
+        // Going through each letter, if it is an uppercase letter,
+        // transform it to lowercase through ascii transformation. (see ascii-table for reference)
         for (int i = 0; i < inputCharArray.length; i++) {
             if(inputCharArray[i] >= ASCII_UPPERCASE_START_INDEX && inputCharArray[i] <= ASCII_UPPERCASE_END_INDEX) {
                 inputCharArray[i] += ASCII_TRANSFORM_CONSTANT;
