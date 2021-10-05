@@ -52,4 +52,14 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_threeSparesInARow_40() {
+        BowlingGame game = new BowlingGame();
+        rollMany(game, 6, 5);
+        rollMany(game, 14, 0);
+        int actual = game.getScore();
+        int expected = 40;
+        assertEquals(expected, actual);
+    }
+
 }
