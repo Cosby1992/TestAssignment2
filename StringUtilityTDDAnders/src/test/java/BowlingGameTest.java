@@ -9,6 +9,13 @@ public class BowlingGameTest {
         }
     }
 
+    private void rollStrikes(BowlingGame game, int numberOfStrikes) {
+        for (int i = 0; i < numberOfStrikes; i++) {
+            game.roll(10);
+            game.roll(0);
+        }
+    }
+
     @Test
     public void getScore_gameOfZero_0() {
         BowlingGame game = new BowlingGame();
@@ -72,11 +79,23 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
-    private void rollStrikes(BowlingGame game, int numberOfStrikes) {
-        for (int i = 0; i < numberOfStrikes; i++) {
-            game.roll(10);
-            game.roll(0);
-        }
+    @Test
+    public void getScore_extendedTenthFrame_233() {
+        BowlingGame game = new BowlingGame();
+        game.roll(1);
+        game.roll(7);
+        rollStrikes(game,3);
+        game.roll(7);
+        game.roll(3); // spare
+        rollStrikes(game,4);
+        game.roll(8);
+        game.roll(2);
+        game.roll(10);
+        int actual = game.getScore();
+        int expected = 233;
+        assertEquals(expected, actual);
     }
+
+
 
 }

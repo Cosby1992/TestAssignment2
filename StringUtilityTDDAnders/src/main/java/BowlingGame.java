@@ -9,16 +9,6 @@ public class BowlingGame {
         scores[roll++] = i;
     }
 
-    private boolean isSpare(int pin, int pin2) {
-        // if pin one and two results in ten, it's a spare
-        // unless the first pin is 10, then it would be a strike
-        return (pin + pin2) == 10 && pin != 10;
-    }
-
-    private boolean isStrike(int pin) {
-        return pin == 10;
-    }
-
     public int getScore() {
 
         int totalScore = 0;
