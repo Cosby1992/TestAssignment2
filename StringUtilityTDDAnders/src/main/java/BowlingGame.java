@@ -17,15 +17,17 @@ public class BowlingGame {
         for (int activeFrameIndex = 0; activeFrameIndex < scores.length-1; activeFrameIndex += 2) {
             int score = scores[activeFrameIndex] + scores[activeFrameIndex + 1];
 
-            // account for spare
-            if (priviousScore == 10) {
+            // account for strike
+            if (activeFrameIndex > 0 && scores[activeFrameIndex - 2] == 10) {
+                totalScore += scores[activeFrameIndex] + scores[activeFrameIndex + 1];
+            } else if (priviousScore == 10) {
+                // account for spare
                 totalScore += scores[activeFrameIndex];
             }
 
             priviousScore = score;
 
             totalScore += score;
-            System.out.println(totalScore);
         }
 
         return totalScore;
