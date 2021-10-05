@@ -39,4 +39,17 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_oneStrike_14() {
+        BowlingGame game = new BowlingGame();
+        game.roll(10);
+        game.roll(0);
+        game.roll(1);
+        game.roll(1);
+        rollMany(game, 17, 0);
+        int actual = game.getScore();
+        int expected = 14;
+        assertEquals(expected, actual);
+    }
+
 }
