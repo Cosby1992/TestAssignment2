@@ -62,4 +62,21 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_threeStrikesInARow_60() {
+        BowlingGame game = new BowlingGame();
+        rollStrikes(game,3);
+        rollMany(game, 14, 0);
+        int actual = game.getScore();
+        int expected = 60;
+        assertEquals(expected, actual);
+    }
+
+    private void rollStrikes(BowlingGame game, int numberOfStrikes) {
+        for (int i = 0; i < numberOfStrikes; i++) {
+            game.roll(10);
+            game.roll(0);
+        }
+    }
+
 }
