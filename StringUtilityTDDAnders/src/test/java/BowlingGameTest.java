@@ -96,6 +96,16 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_thePerfectGame_300() {
+        BowlingGame game = new BowlingGame();
+        rollStrikes(game,9);
+        rollMany(game, 3, 10);
+        int actual = game.getScore();
+        int expected = 300;
+        assertEquals(expected, actual);
+    }
+
 
 
 }
