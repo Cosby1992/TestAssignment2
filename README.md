@@ -175,14 +175,128 @@ The actual implementation can be found here ```StringUtilityTDDAnders/src/main/j
 ## 3.1 JUnit 5
 
 Investigate JUnit 5 (Jupiter). Explain the following, and how they are useful.
-- @Tag
-- @Disabled
-- @RepeatedTest
-- @BeforeEach, @AfterEach
-- @BeforeAll, @AfterAll
-- @DisplayName
-- @Nested
-- assumeFalse, assumeTrue 
+
+### ```@Tag```
+
+>  ```@Tag ``` is a repeatable annotation that is used to declare a tag for the annotated 
+> test class or test method. Tags are used to filter which tests are executed for 
+> a given test plan. For example, a development team may tag tests with values 
+> such as "fast", "slow", "ci-server", etc. and then supply a list of tags to be 
+> used for the current test plan, potentially dependent on the current environment. <br>
+> **Syntax Rules for Tags**
+> - A tag must not be blank.
+> - A trimmed tag must not contain whitespace.
+> - A trimmed tag must not contain ISO control characters.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Tag.html)
+
+### ```@Disabled```
+
+> ```@Disabled``` is used to signal that the annotated test class or test method is 
+> currently disabled and should not be executed.
+> When applied at the class level, all test methods within that class are 
+> automatically disabled as well.
+> <br><br>Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Disabled.html)
+### ```@RepeatedTest```
+
+> ````@RepeatedTest```` is used to signal that the annotated method is a test template method 
+> that should be repeated a specified number of times with a configurable display name.
+> Each invocation of the repeated test behaves like the execution of a regular ````@Test````
+> method with full support for the same lifecycle callbacks and extensions. In 
+> addition, the current repetition and total number of repetitions can be 
+> accessed by having the RepetitionInfo injected. <br>
+> **Syntax Rules for RepeatedTest**
+> - ````@RepeatedTest```` methods must not be private or static and must return void.
+> - ````@RepeatedTest```` methods may optionally declare parameters to be resolved by ParameterResolvers.
+> - ````@RepeatedTest```` may also be used as a meta-annotation in order to create a custom composed annotation that inherits the semantics of ````@RepeatedTest.````
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/RepeatedTest.html)
+
+### ````@BeforeEach, @AfterEach````
+
+> ````@BeforeEach```` is used to signal that the annotated method should be executed before each 
+> ````@Test```` method in the current test class.
+> <br>**Syntax Rules for BeforeEach**
+> - ````@BeforeEach```` methods must have a void return type
+> - Must not be private, and must not be static. 
+> - They may optionally declare parameters to be resolved by ParameterResolvers.
+>
+> 
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/BeforeEach.html)
+> 
+> ````@AfterEach```` is used to signal that the annotated method should 
+> be executed after each ````@Test```` method in the current test class.
+> <br>**Syntax Rules for BeforeEach**
+> - ````@AfterEach```` methods must have a void return type
+> - Must not be private, and must not be static.
+> - They may optionally declare parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/AfterEach.html)
+
+### ````@BeforeAll, @AfterAll````
+
+> ````@BeforeAll```` is used to signal that the annotated method should be executed *before* **all** 
+> tests in the current test class.
+> In contrast to ````@BeforeEach```` methods, ````@BeforeAll```` methods are only executed once for 
+> a given test class.
+> <br>**Syntax Rules for BeforeAll**
+> - ````@BeforeAll```` methods must have a void return type 
+> - Must not be private, and must be static by default. 
+> - Consequently, ````@BeforeAll```` methods are not supported in ````@Nested```` test classes or as 
+> interface default methods unless the test class is annotated with 
+> ````@TestInstance(Lifecycle.PER_CLASS)````. ````@BeforeAll```` methods may optionally declare 
+> parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/BeforeAll.html)
+>
+> ````@AfterAll```` is used to signal that the annotated method should be executed *after* **all**
+> tests in the current test class.
+> In contrast to ````@AfterEach```` methods, ````@AfterAll```` methods are only executed once for
+> a given test class.
+> <br>**Syntax Rules for AfterAll**
+> - ````@AfterAll```` methods must have a void return type
+> - Must not be private, and must be static by default.
+> - Consequently, ````@AfterAll```` methods are not supported in ````@Nested```` test classes or as
+    > interface default methods unless the test class is annotated with
+    > ````@TestInstance(Lifecycle.PER_CLASS)````. ````@AfterAll```` methods may optionally declare
+    > parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/AfterAll.html)
+
+### ````@DisplayName````
+
+> ````@DisplayName```` is used to declare a custom display name for the annotated test 
+> class or test method.
+> Display names are typically used for test reporting in IDEs and build tools 
+> and may contain spaces, special characters, and even emoji.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/DisplayName.html)
+
+### ````@Nested````
+
+> @Nested is used to signal that the annotated class is a nested, non-static test class.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Nested.html)
+> 
+> @Nested tests give the test writer more capabilities to express the relationship 
+> among several groups of tests. Such nested tests make use of Java’s nested 
+> classes and facilitate hierarchical thinking about the test structure.
+> 
+> Source: JUnit User guide → [Go to junit user guide](https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested) 
+> which includes extended examples on usage
+
+### ````assumeFalse, assumeTrue````
+> Assumptions is a collection of utility methods that support conditional test 
+> execution based on assumptions.
+> In direct contrast to failed assertions, failed assumptions do not result in a 
+> test failure; rather, a failed assumption results in a test being aborted.
+> 
+> Assumptions are typically used whenever it does not make sense to continue 
+> execution of a given test method — for example, if the test depends on 
+> something that does not exist in the current runtime environment.
+> 
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested) 
+> which includes a list of all Assumption methods and a small description of usage. 
 
 ## 3.2 Mocking Frameworks
 
