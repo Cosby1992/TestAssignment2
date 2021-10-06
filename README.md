@@ -175,6 +175,14 @@ The actual implementation can be found here ```StringUtilityTDDAnders/src/main/j
 ## 3.1 JUnit 5
 
 Investigate JUnit 5 (Jupiter). Explain the following, and how they are useful.
+- @Tag
+- @Disabled
+- @RepeatedTest
+- @BeforeEach, @AfterEach
+- @BeforeAll, @AfterAll
+- @DisplayName
+- @Nested
+- assumeFalse, assumeTrue 
 
 ## 3.2 Mocking Frameworks
 
