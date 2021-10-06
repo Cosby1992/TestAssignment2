@@ -1,4 +1,8 @@
+# Test Assignment 2
 
+Anders, Dmitro
+
+---------
 
 # 1 Reflection
 
@@ -114,7 +118,7 @@ solution, it won’t be accepted.
 3. There are three test classes ```StringUtilityReverseTest```, ```StringUtilityCapitalizeTest```, ```StringUtilityLowercaseTest```.
 4. Run each of these three classes to see the test results
 
-OBS: ```StringUtilityTDDAnders``` is a module.
+> OBS: ```StringUtilityTDDAnders``` is a module.
 
 #### Dmitro
 
