@@ -365,6 +365,14 @@ JMockit, even though Mockito is the number one rated Mocking framework for Java.
 Unfortunately it lacks a large community, but I would hope that the documentation 
 and ease of use would be outweighing the lack in community.
 
+##### Dmitro
+
+Same as Anders, there is no favorite mocking framework, 
+due to the lack of experience with those.
+
+I would go for Mockito since it is the highest rated.
+
+
 # Hand-in
 
 Make the katas individually. The other things may be done in groups. Handin on the
