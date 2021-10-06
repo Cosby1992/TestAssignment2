@@ -306,6 +306,53 @@ frameworks, and answer the questions. (One could be Mockito, which we saw in cla
 - What are their differences?
 - Which one would you prefer, if any, and why?
 
+### Mockito, Easymock, JMockit
+#### Similarities
+All three frameworks are easily configured and uses annotations to define mocks. 
+They all more or less follow the record-replay-verify pattern.
+
+#### Differences
+JMockit forces you to follow the record-replay-verify pattern which helps to 
+maintain structure in the test code.
+JMockit can be a bit more difficult to learn since it has a larger scope than the other frameworks.
+JMockit is basically maintained by one person (has three contributors on GitHub)
+JMockit can mock final classes.
+JMockit's API documentation is very complete and provides detailed explanation 
+for the entire mocking API.
+Easymock forces you to call replay everytime you want to use a mock. 
+Easymock is easy to install and provides a great install guide. 
+A full API is available for browsing and understanding the framework more.
+Easymock can switch between mocking modes (nice, normal, strict) which makes 
+it flexible.
+Easymock forces the user to define all interactions in the code, this gives 
+complete control over all interactions, but can make it slower to use 
+compared to the others that can handle this automatically.
+Mockito has a large community support and focuses on a clean and simple API. 
+Mockito has only one way to create mocks which makes it easy to use. 
+Mockito enables users to easily track failed verifications in tests and 
+these exceptions lead the user to the actual point of interaction in the 
+code. The stack trace will always be clean and verification can be 
+flexible in the order it is presented ensuring the most important 
+verifications can be shown first.
+
+> Sources:<br>
+> [Mockito vs EasyMock vs JMockit](https://www.baeldung.com/mockito-vs-easymock-vs-jmockit) <br>
+> [EasyMock Review](https://www.slant.co/options/825/~easymock-review) <br>
+> [JMockit vs Mockito](https://www.slant.co/versus/824/826/~jmockit_vs_mockito) <br>
+
+#### Preferred Mocking framework
+
+##### Anders
+
+I do not really have a favorite Mocking framework. 
+This is because I have not used any mocking frameworks yet.
+I've done unit testing, user testing and behavior driven testing.
+
+But from what I've read about the above three frameworks, I think I would choose
+JMockit, even though Mockito is the number one rated Mocking framework for Java. It sounds like it has a great and strict syntax and great documentation. 
+Unfortunately it lacks a large community, but I would hope that the documentation 
+and ease of use would be outweighing the lack in community.
+
 # Hand-in
 
 Make the katas individually. The other things may be done in groups. Handin on the
