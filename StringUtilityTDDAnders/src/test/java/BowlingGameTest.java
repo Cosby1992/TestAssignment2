@@ -106,6 +106,22 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_allSpares_190() {
+        BowlingGame game = new BowlingGame();
+
+        for (int i = 0; i < 10; i++) {
+            game.roll(9);
+            game.roll(1);
+        }
+
+        game.roll(9);
+
+        int actual = game.getScore();
+        int expected = 190;
+        assertEquals(expected, actual);
+    }
+
 
 
 }
