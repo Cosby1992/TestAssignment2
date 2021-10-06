@@ -109,16 +109,26 @@ public class BowlingGameTest {
     @Test
     public void getScore_allSpares_190() {
         BowlingGame game = new BowlingGame();
-
         for (int i = 0; i < 10; i++) {
             game.roll(9);
             game.roll(1);
         }
-
         game.roll(9);
-
         int actual = game.getScore();
         int expected = 190;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getScore_sparesWith10PinsInSecondThrow_100() {
+        BowlingGame game = new BowlingGame();
+        for (int i = 0; i < 10; i++) {
+            game.roll(0);
+            game.roll(10);
+        }
+        game.roll(0);
+        int actual = game.getScore();
+        int expected = 100;
         assertEquals(expected, actual);
     }
 
