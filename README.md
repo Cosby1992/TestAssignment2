@@ -127,7 +127,11 @@ solution, it won’t be accepted.
 
 #### Dmitro
 
--[ ] Write how to run your tests
+1. Clone this repository
+2. Navigate to StringUtility tests ```StringUtilityTDDDmitro/src/test/java```
+3. Run the class ```StringUtilityTest```
+
+> OBS: ```StringUtilityTDDDmitro``` is a module.
 
 ### Associated Files
 
@@ -140,7 +144,10 @@ The actual implementation can be found here ```StringUtilityTDDAnders/src/main/j
 
 #### Dmitro
 
--[ ] Write which files are associated with your code (for string utility)
+The test files are located in ```StringUtilityTDDDmitro/src/test/java``` as described in the [To run](#to-run-1) section.
+
+The class that is tested can be found here ```StringUtilityTDDDmitro/src/main/java/stringutility/StringUtility.java```
+
 
 ## 2.2 Bowling Game Kata
 
@@ -156,7 +163,11 @@ OBS: ```StringUtilityTDDAnders``` is a module.
 
 #### Dmitro
 
--[ ] Write how to run your tests
+1. Clone this repository
+2. Navigate to StringUtility tests ```StringUtilityTDDDmitro/src/test/java```
+3. Run the test class ```BowlingGameTest```
+
+OBS: ```StringUtilityTDDDmitro``` is a module.
 
 ### Associated Files
 
@@ -168,8 +179,9 @@ The actual implementation can be found here ```StringUtilityTDDAnders/src/main/j
 
 #### Dmitro
 
--[ ] Write which files are associated with your code (for Bowling game)
+The test file is located in ```StringUtilityTDDDmitro/src/test/java/``` as described in the [To run](#to-run-2) section.
 
+The class that is tested can be found here ```StringUtilityTDDDmitro/src/main/java/Game.java```
 # 3 Investigation of tools
 
 ## 3.1 JUnit 5
