@@ -188,6 +188,128 @@ The class that is tested can be found here ```StringUtilityTDDDmitro/src/main/ja
 
 Investigate JUnit 5 (Jupiter). Explain the following, and how they are useful.
 
+### ```@Tag```
+
+>  ```@Tag ``` is a repeatable annotation that is used to declare a tag for the annotated 
+> test class or test method. Tags are used to filter which tests are executed for 
+> a given test plan. For example, a development team may tag tests with values 
+> such as "fast", "slow", "ci-server", etc. and then supply a list of tags to be 
+> used for the current test plan, potentially dependent on the current environment. <br>
+> **Syntax Rules for Tags**
+> - A tag must not be blank.
+> - A trimmed tag must not contain whitespace.
+> - A trimmed tag must not contain ISO control characters.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Tag.html)
+
+### ```@Disabled```
+
+> ```@Disabled``` is used to signal that the annotated test class or test method is 
+> currently disabled and should not be executed.
+> When applied at the class level, all test methods within that class are 
+> automatically disabled as well.
+> <br><br>Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Disabled.html)
+### ```@RepeatedTest```
+
+> ````@RepeatedTest```` is used to signal that the annotated method is a test template method 
+> that should be repeated a specified number of times with a configurable display name.
+> Each invocation of the repeated test behaves like the execution of a regular ````@Test````
+> method with full support for the same lifecycle callbacks and extensions. In 
+> addition, the current repetition and total number of repetitions can be 
+> accessed by having the RepetitionInfo injected. <br>
+> **Syntax Rules for RepeatedTest**
+> - ````@RepeatedTest```` methods must not be private or static and must return void.
+> - ````@RepeatedTest```` methods may optionally declare parameters to be resolved by ParameterResolvers.
+> - ````@RepeatedTest```` may also be used as a meta-annotation in order to create a custom composed annotation that inherits the semantics of ````@RepeatedTest.````
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/RepeatedTest.html)
+
+### ````@BeforeEach, @AfterEach````
+
+> ````@BeforeEach```` is used to signal that the annotated method should be executed before each 
+> ````@Test```` method in the current test class.
+> <br>**Syntax Rules for BeforeEach**
+> - ````@BeforeEach```` methods must have a void return type
+> - Must not be private, and must not be static. 
+> - They may optionally declare parameters to be resolved by ParameterResolvers.
+>
+> 
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/BeforeEach.html)
+> 
+> ````@AfterEach```` is used to signal that the annotated method should 
+> be executed after each ````@Test```` method in the current test class.
+> <br>**Syntax Rules for BeforeEach**
+> - ````@AfterEach```` methods must have a void return type
+> - Must not be private, and must not be static.
+> - They may optionally declare parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/AfterEach.html)
+
+### ````@BeforeAll, @AfterAll````
+
+> ````@BeforeAll```` is used to signal that the annotated method should be executed *before* **all** 
+> tests in the current test class.
+> In contrast to ````@BeforeEach```` methods, ````@BeforeAll```` methods are only executed once for 
+> a given test class.
+> <br>**Syntax Rules for BeforeAll**
+> - ````@BeforeAll```` methods must have a void return type 
+> - Must not be private, and must be static by default. 
+> - Consequently, ````@BeforeAll```` methods are not supported in ````@Nested```` test classes or as 
+> interface default methods unless the test class is annotated with 
+> ````@TestInstance(Lifecycle.PER_CLASS)````. ````@BeforeAll```` methods may optionally declare 
+> parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/BeforeAll.html)
+>
+> ````@AfterAll```` is used to signal that the annotated method should be executed *after* **all**
+> tests in the current test class.
+> In contrast to ````@AfterEach```` methods, ````@AfterAll```` methods are only executed once for
+> a given test class.
+> <br>**Syntax Rules for AfterAll**
+> - ````@AfterAll```` methods must have a void return type
+> - Must not be private, and must be static by default.
+> - Consequently, ````@AfterAll```` methods are not supported in ````@Nested```` test classes or as
+    > interface default methods unless the test class is annotated with
+    > ````@TestInstance(Lifecycle.PER_CLASS)````. ````@AfterAll```` methods may optionally declare
+    > parameters to be resolved by ParameterResolvers.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/AfterAll.html)
+
+### ````@DisplayName````
+
+> ````@DisplayName```` is used to declare a custom display name for the annotated test 
+> class or test method.
+> Display names are typically used for test reporting in IDEs and build tools 
+> and may contain spaces, special characters, and even emoji.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/DisplayName.html)
+
+### ````@Nested````
+
+> @Nested is used to signal that the annotated class is a nested, non-static test class.
+>
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/5.0.2/api/org/junit/jupiter/api/Nested.html)
+> 
+> @Nested tests give the test writer more capabilities to express the relationship 
+> among several groups of tests. Such nested tests make use of Java’s nested 
+> classes and facilitate hierarchical thinking about the test structure.
+> 
+> Source: JUnit User guide → [Go to junit user guide](https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested) 
+> which includes extended examples on usage
+
+### ````assumeFalse, assumeTrue````
+> Assumptions is a collection of utility methods that support conditional test 
+> execution based on assumptions.
+> In direct contrast to failed assertions, failed assumptions do not result in a 
+> test failure; rather, a failed assumption results in a test being aborted.
+> 
+> Assumptions are typically used whenever it does not make sense to continue 
+> execution of a given test method — for example, if the test depends on 
+> something that does not exist in the current runtime environment.
+> 
+> Source: JUnit documentation → [Go to junit docs](https://junit.org/junit5/docs/current/user-guide/#writing-tests-nested) 
+> which includes a list of all Assumption methods and a small description of usage. 
+
 ## 3.2 Mocking Frameworks
 
 Investigate mocking frameworks for your preferred language. Choose at least two
@@ -195,6 +317,53 @@ frameworks, and answer the questions. (One could be Mockito, which we saw in cla
 - What are their similarities?
 - What are their differences?
 - Which one would you prefer, if any, and why?
+
+### Mockito, Easymock, JMockit
+#### Similarities
+All three frameworks are easily configured and uses annotations to define mocks. 
+They all more or less follow the record-replay-verify pattern.
+
+#### Differences
+JMockit forces you to follow the record-replay-verify pattern which helps to 
+maintain structure in the test code.
+JMockit can be a bit more difficult to learn since it has a larger scope than the other frameworks.
+JMockit is basically maintained by one person (has three contributors on GitHub)
+JMockit can mock final classes.
+JMockit's API documentation is very complete and provides detailed explanation 
+for the entire mocking API.
+Easymock forces you to call replay everytime you want to use a mock. 
+Easymock is easy to install and provides a great install guide. 
+A full API is available for browsing and understanding the framework more.
+Easymock can switch between mocking modes (nice, normal, strict) which makes 
+it flexible.
+Easymock forces the user to define all interactions in the code, this gives 
+complete control over all interactions, but can make it slower to use 
+compared to the others that can handle this automatically.
+Mockito has a large community support and focuses on a clean and simple API. 
+Mockito has only one way to create mocks which makes it easy to use. 
+Mockito enables users to easily track failed verifications in tests and 
+these exceptions lead the user to the actual point of interaction in the 
+code. The stack trace will always be clean and verification can be 
+flexible in the order it is presented ensuring the most important 
+verifications can be shown first.
+
+> Sources:<br>
+> [Mockito vs EasyMock vs JMockit](https://www.baeldung.com/mockito-vs-easymock-vs-jmockit) <br>
+> [EasyMock Review](https://www.slant.co/options/825/~easymock-review) <br>
+> [JMockit vs Mockito](https://www.slant.co/versus/824/826/~jmockit_vs_mockito) <br>
+
+#### Preferred Mocking framework
+
+##### Anders
+
+I do not really have a favorite Mocking framework. 
+This is because I have not used any mocking frameworks yet.
+I've done unit testing, user testing and behavior driven testing.
+
+But from what I've read about the above three frameworks, I think I would choose
+JMockit, even though Mockito is the number one rated Mocking framework for Java. It sounds like it has a great and strict syntax and great documentation. 
+Unfortunately it lacks a large community, but I would hope that the documentation 
+and ease of use would be outweighing the lack in community.
 
 # Hand-in
 
