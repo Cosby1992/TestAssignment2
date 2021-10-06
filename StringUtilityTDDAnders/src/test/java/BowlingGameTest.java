@@ -1,6 +1,22 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test Scope
+ * Class: BowlingGame
+ * Method: public int calculateScore()
+ *
+ * Test framework
+ * Name: junit-jupiter
+ * Version: 5.8.1
+ *
+ * More test could be implemented, but time is a resource.
+ * If I had more time, I would definitely test the method "roll(int points)"
+ * This would be to make sure that you cannot roll illegally (like |0|0|9| in the tenth frame)
+ * But a legal board gives a valid score as it is.
+ *
+ * @author Anders
+ */
 public class BowlingGameTest {
 
     private void rollMany(BowlingGame game, int iterations, int points) {
@@ -146,6 +162,17 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
-
+    @Test
+    public void getScore_alternatingStrikesAndGutterballs_50() {
+        BowlingGame game = new BowlingGame();
+        for (int i = 0; i < 5; i++) {
+            rollStrikes(game, 1);
+            game.roll(0);
+            game.roll(0);
+        }
+        int actual = game.calculateScore();
+        int expected = 50;
+        assertEquals(expected, actual);
+    }
 
 }
