@@ -1,9 +1,13 @@
+package stringutility;
+
 import org.junit.jupiter.api.Test;
+import stringutility.StringUtility;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Scope
- * Class: StringUtility
+ * Class: stringutility.StringUtility
  * Method: public String capitalize(String input)
  *
  * Test framework
@@ -59,7 +63,7 @@ public class StringUtilityCapitalizeTest {
 //    public void capitalize_danishCharacters_ÆØÅ() {
 //        String input = "æØå";
 //
-//        String actual = StringUtility.capitalize(input);
+//        String actual = stringutility.StringUtility.capitalize(input);
 //        String expected =  "ÆØÅ";
 //
 //        assertEquals(expected, actual);

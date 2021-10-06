@@ -1,3 +1,5 @@
+package stringutility;
+
 import java.nio.charset.StandardCharsets;
 
 /**

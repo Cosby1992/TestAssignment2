@@ -84,8 +84,8 @@ Source:
 
 # 2 Two Katas
 Complete the following using TDD. Remember the TDD mantra.
-
-## 2.1 String Utility
+## Anders
+### 2.1 String Utility
 Use TDD to create a string utility with the following methods:
 - Reverse string (aBc -> cBa)
 - Capitalize string (aBc -> ABC)
@@ -95,20 +95,8 @@ Don’t use any built-in string utility – create your own. Remember, the exerc
 use TDD, not to deliver a working utility without tests. If there are no tests in the
 solution, it won’t be accepted.
 
-### To Run
-#### Dmitro
-#### Anders
+### 2.2 Bowling Game Kata
 
-### Associated Files
-#### Dmitro
-#### Anders
 
-## 2.2 Bowling Game Kata
-
-### To Run
-#### Dmitro
-#### Anders
-### Associated Files
-#### Dmitro
-#### Anders
+## Dima
 

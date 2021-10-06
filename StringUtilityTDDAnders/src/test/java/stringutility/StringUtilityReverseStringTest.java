@@ -1,10 +1,13 @@
+package stringutility;
+
 import org.junit.jupiter.api.Test;
+import stringutility.StringUtility;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test Scope
- * Class: StringUtility
+ * Class: stringutility.StringUtility
  * Method: public String ReverseString(String input)
  *
  * Test framework

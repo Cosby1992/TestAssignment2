@@ -1,9 +1,11 @@
+package bowlinggame;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test Scope
- * Class: BowlingGame
+ * Class: bowlingGame.BowlingGame
  * Method: public int calculateScore()
  *
  * Test framework
@@ -12,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * More test could be implemented, but time is a resource.
  * If I had more time, I would definitely test the method "roll(int points)"
- * This would be to make sure that you cannot roll illegally (like |0|0|9| in the tenth frame)
+ * This would be to make sure that you cannot roll illegally ↓↓↓
+ * (e.g. |0|0|9| in the tenth frame or |10|5| strike and more points in normal frame)
  * But a legal board gives a valid score as it is.
  *
  * @author Anders
