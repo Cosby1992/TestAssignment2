@@ -1,8 +1,13 @@
 # Test Assignment 2
 
-Anders, Dmitro
+**Contributers:** Anders, Dmitro
 
----------
+---------------------------------------------------------------
+
+The below assignment was made by Anders and Dmitro. All but the two Katas
+are made in collaboration, while the two Katas are made individually and 
+are placed in separate modules within the project. How to run the Katas 
+are described in the [Two Katas](#2-two-katas) section.
 
 # 1 Reflection
 
