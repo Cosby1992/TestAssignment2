@@ -20,7 +20,7 @@ public class BowlingGameTest {
     public void getScore_gameOfZero_0() {
         BowlingGame game = new BowlingGame();
         rollMany(game, 20, 0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 0;
         assertEquals(expected, actual);
     }
@@ -29,7 +29,7 @@ public class BowlingGameTest {
     public void getScore_gameOfOnes_20() {
         BowlingGame game = new BowlingGame();
         rollMany(game, 20, 1);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 20;
         assertEquals(expected, actual);
     }
@@ -41,7 +41,7 @@ public class BowlingGameTest {
         game.roll(5);
         game.roll(3);
         rollMany(game, 17, 0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 16;
         assertEquals(expected, actual);
     }
@@ -54,7 +54,7 @@ public class BowlingGameTest {
         game.roll(1);
         game.roll(1);
         rollMany(game, 17, 0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 14;
         assertEquals(expected, actual);
     }
@@ -64,7 +64,7 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame();
         rollMany(game, 6, 5);
         rollMany(game, 14, 0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 40;
         assertEquals(expected, actual);
     }
@@ -74,7 +74,7 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame();
         rollStrikes(game,3);
         rollMany(game, 14, 0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 60;
         assertEquals(expected, actual);
     }
@@ -91,7 +91,7 @@ public class BowlingGameTest {
         game.roll(8);
         game.roll(2);
         game.roll(10);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 233;
         assertEquals(expected, actual);
     }
@@ -101,7 +101,7 @@ public class BowlingGameTest {
         BowlingGame game = new BowlingGame();
         rollStrikes(game,9);
         rollMany(game, 3, 10);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 300;
         assertEquals(expected, actual);
     }
@@ -114,7 +114,7 @@ public class BowlingGameTest {
             game.roll(1);
         }
         game.roll(9);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 190;
         assertEquals(expected, actual);
     }
@@ -127,7 +127,7 @@ public class BowlingGameTest {
             game.roll(10);
         }
         game.roll(0);
-        int actual = game.getScore();
+        int actual = game.calculateScore();
         int expected = 100;
         assertEquals(expected, actual);
     }
