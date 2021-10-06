@@ -132,6 +132,20 @@ public class BowlingGameTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void getScore_alternatingStrikesAndSpares_200() {
+        BowlingGame game = new BowlingGame();
+        for (int i = 0; i < 5; i++) {
+            rollStrikes(game, 1);
+            game.roll(9);
+            game.roll(1);
+        }
+        game.roll(10);
+        int actual = game.calculateScore();
+        int expected = 200;
+        assertEquals(expected, actual);
+    }
+
 
 
 }
